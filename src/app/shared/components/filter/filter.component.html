@@ -1,0 +1,29 @@
+<div class="w-full h-full">
+  <form class="w-full h-full flex justify-around items-center">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Ex. Fulano da Silva" value="Fulano" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data de cadastro</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-select>
+        @for (food of foods; track food) {
+        <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-flat-button>Filtrar</button>
+  </form>
+</div>
