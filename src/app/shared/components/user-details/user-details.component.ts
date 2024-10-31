@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { UserDetailInfoComponent } from './components/user-detail-info/user-detail-info.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-user-details',
   standalone: true,
-  imports: [UserDetailInfoComponent],
+  imports: [UserDetailInfoComponent, MatListModule, MatDividerModule],
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.scss'
 })

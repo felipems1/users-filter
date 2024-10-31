@@ -1,8 +1,9 @@
 <div class="w-full h-full">
-  <div class="flex flex-col">
-    <div class="border-b border-solid border-zinc-400 text-center py-4">
-      <span class="text-lg font-medium">Detalhes do usuário</span>
-    </div>
+  <mat-list>
+    <mat-list-item class="text-center">
+      <span class="text-lg font-medium">Detalhes do Usuário</span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
 
     <app-user-detail-info
       label="Nome"
@@ -24,7 +25,7 @@
       value="Rua das Flores, 42, São Paulo"
     ></app-user-detail-info>
 
-    <app-user-detail-info label="Ativo" value="Sim"></app-user-detail-info>
+    <app-user-detail-info label="Ativo" value="Sim"> </app-user-detail-info>
 
     <app-user-detail-info
       label="Função"
@@ -35,5 +36,5 @@
       label="Data de cadastro"
       value="20/08/2008"
     ></app-user-detail-info>
-  </div>
+  </mat-list>
 </div>

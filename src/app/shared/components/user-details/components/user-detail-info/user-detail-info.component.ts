@@ -1,9 +1,11 @@
 import { Component, input } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-user-detail-info',
   standalone: true,
-  imports: [],
+  imports: [MatListModule, MatDividerModule],
   templateUrl: './user-detail-info.component.html',
   styleUrl: './user-detail-info.component.scss'
 })
