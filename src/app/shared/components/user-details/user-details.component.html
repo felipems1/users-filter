@@ -35,7 +35,7 @@
 
     <app-user-detail-info
       label="Data de Cadastro"
-      value="{{ user().dataCadastro }}"
+      value="{{ user().dataCadastro | date:'dd/MM/yyyy' }}"
     ></app-user-detail-info>
   </mat-list>
 </div>

@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../../mocks/users-list';
+import { DatePipe } from '@angular/common';
+import { StatusPipe } from '../../pipes/status.pipe';
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, DatePipe, StatusPipe],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss'
 })
