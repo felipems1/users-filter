@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../../mocks/users-list';
@@ -14,7 +14,7 @@ import { DashIfEmptyPipe } from '../../pipes/dash-if-empty.pipe';
   styleUrl: './users-list.component.scss'
 })
 export class UsersListComponent {
-  public readonly usersList: IUser[] = UsersList;
+  public readonly usersList = input.required<IUser[]>();
   public readonly displayedColumns: string[] = ['name', 'date', 'status'];
 
   public readonly userSelectedEmit = output<IUser>({ alias: 'userSelected' });

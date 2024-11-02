@@ -15,6 +15,7 @@ import { UsersList } from './mocks/users-list';
 export class AppComponent {
   public readonly userSelected = signal<IUser>({} as IUser);
   public readonly showUserDetails = signal<boolean>(false);
+  public readonly users = signal<IUser[]>(UsersList);
 
   onUserSelected(user: IUser): void {
     this.userSelected.set(user);
