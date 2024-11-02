@@ -25,7 +25,7 @@
       value="{{ user().endereco | address }}"
     ></app-user-detail-info>
 
-    <app-user-detail-info label="Ativo" value="{{ user().ativo }}">
+    <app-user-detail-info label="Status" value="{{ user().ativo | status }}">
     </app-user-detail-info>
 
     <app-user-detail-info
@@ -34,7 +34,7 @@
     ></app-user-detail-info>
 
     <app-user-detail-info
-      label="Data de cadastro"
+      label="Data de Cadastro"
       value="{{ user().dataCadastro }}"
     ></app-user-detail-info>
   </mat-list>

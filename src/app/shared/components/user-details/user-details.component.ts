@@ -5,11 +5,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { IUser } from '../../interfaces/user/user.interface';
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { AddressPipe } from '../../pipes/address.pipe';
+import { StatusPipe } from '../../pipes/status.pipe';
 
 @Component({
   selector: 'app-user-details',
   standalone: true,
-  imports: [UserDetailInfoComponent, MatListModule, MatDividerModule, PhonePipe, AddressPipe],
+  imports: [UserDetailInfoComponent, MatListModule, MatDividerModule, PhonePipe, AddressPipe, StatusPipe],
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.scss'
 })
