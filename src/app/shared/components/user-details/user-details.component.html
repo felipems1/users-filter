@@ -7,34 +7,35 @@
 
     <app-user-detail-info
       label="Nome"
-      value="Fulano da Silva"
+      value="{{ user().nome }}"
     ></app-user-detail-info>
 
     <app-user-detail-info
       label="Email"
-      value="john@example.com"
+      value="{{ user().email }}"
     ></app-user-detail-info>
 
     <app-user-detail-info
       label="Telefone"
-      value="(83) 98888-0000"
+      value="{{ user().telefone }}"
     ></app-user-detail-info>
 
     <app-user-detail-info
       label="Endereço"
-      value="Rua das Flores, 42, São Paulo"
+      value="{{ user().endereco.rua }}, {{ user().endereco.numero }}, {{ user().endereco.cidade }} - {{ user().endereco.estado }}"
     ></app-user-detail-info>
 
-    <app-user-detail-info label="Ativo" value="Sim"> </app-user-detail-info>
+    <app-user-detail-info label="Ativo" value="{{ user().ativo }}">
+    </app-user-detail-info>
 
     <app-user-detail-info
       label="Função"
-      value="Desenvolvedor"
+      value="{{ user().funcao }}"
     ></app-user-detail-info>
 
     <app-user-detail-info
       label="Data de cadastro"
-      value="20/08/2008"
+      value="{{ user().dataCadastro }}"
     ></app-user-detail-info>
   </mat-list>
 </div>

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { UserDetailInfoComponent } from './components/user-detail-info/user-detail-info.component';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { IUser } from '../../interfaces/user/user.interface';
 
 @Component({
   selector: 'app-user-details',
@@ -11,5 +12,5 @@ import { MatDividerModule } from '@angular/material/divider';
   styleUrl: './user-details.component.scss'
 })
 export class UserDetailsComponent {
-
+  public readonly user = input.required<IUser>()
 }
