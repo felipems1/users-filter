@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../../mocks/users-list';
@@ -17,7 +17,9 @@ export class UsersListComponent {
   public readonly usersList: IUser[] = UsersList;
   public readonly displayedColumns: string[] = ['name', 'date', 'status'];
 
+  public readonly userSelectedEmit = output<IUser>({ alias: 'userSelected' });
+
   onUserSelected(user: IUser) {
-    console.log(user)
+    this.userSelectedEmit.emit(user);
   }
 }

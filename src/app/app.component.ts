@@ -13,5 +13,11 @@ import { UsersList } from './mocks/users-list';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public readonly userSelected = signal<IUser>(UsersList[1]);
+  public readonly userSelected = signal<IUser>({} as IUser);
+  public readonly showUserDetails = signal<boolean>(false);
+
+  onUserSelected(user: IUser): void {
+    this.userSelected.set(user);
+    this.showUserDetails.set(true);
+  }
 }
