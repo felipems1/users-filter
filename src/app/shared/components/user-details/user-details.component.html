@@ -22,7 +22,7 @@
 
     <app-user-detail-info
       label="Endereço"
-      value="{{ user().endereco.rua }}, {{ user().endereco.numero }}, {{ user().endereco.cidade }} - {{ user().endereco.estado }}"
+      value="{{ user().endereco | address }}"
     ></app-user-detail-info>
 
     <app-user-detail-info label="Ativo" value="{{ user().ativo }}">
