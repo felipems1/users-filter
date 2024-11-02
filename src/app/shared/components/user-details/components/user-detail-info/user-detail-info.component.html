@@ -1,6 +1,6 @@
 <mat-list-item>
   <span class="text-lg font-medium">{{ label() }}: </span>
-  <span>{{ value() }}</span>
+  <span>{{ value() | dashIfEmpty }}</span>
 </mat-list-item>
 
 <mat-divider></mat-divider>

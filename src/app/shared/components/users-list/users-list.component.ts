@@ -4,11 +4,12 @@ import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../../mocks/users-list';
 import { DatePipe } from '@angular/common';
 import { StatusPipe } from '../../pipes/status.pipe';
+import { DashIfEmptyPipe } from '../../pipes/dash-if-empty.pipe';
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [MatTableModule, DatePipe, StatusPipe],
+  imports: [MatTableModule, DatePipe, StatusPipe, DashIfEmptyPipe],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss'
 })
