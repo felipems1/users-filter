@@ -5,7 +5,7 @@ import { UsersListComponent } from './shared/components/users-list/users-list.co
 import { IUser } from './shared/interfaces/user/user.interface';
 import { UsersList } from './mocks/users-list';
 import { IFilterOptions } from './shared/interfaces/filter-options.inteface';
-import { isWithinInterval } from 'date-fns';
+import { filterUsersList } from './shared/utils/filter-users-list';
 
 @Component({
   selector: 'app-root',
@@ -33,59 +33,6 @@ export class AppComponent implements OnInit {
   }
 
   onFilter(filterOptions: IFilterOptions): void {
-    this.usersListFiltered.set(this.filterUsersList(filterOptions, this.usersList()));
-  }
-
-  filterUsersList(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
-    let filteredList: IUser[] = [];
-
-    filteredList = this.filterUsersListByName(filterOptions.name, usersList);
-
-    filteredList = this.filterUsersListByStatus(filterOptions.status, filteredList);
-
-    filteredList = this.filterUsersListByDate(filterOptions.startDate, filterOptions.endDate, filteredList);
-
-    return filteredList;
-  }
-
-  filterUsersListByDate(startDate: Date | undefined, endDate: Date | undefined, usersList: IUser[]): IUser[] {
-    const DATES_NOT_SELECTED = startDate === undefined || endDate === undefined;
-
-    if (DATES_NOT_SELECTED) {
-      return usersList;
-    }
-
-    const checkDateInterval = (user: IUser) => isWithinInterval(new Date(user.dataCadastro), { 
-      start: startDate, 
-      end: endDate 
-    });
-
-    const filteredList = usersList.filter(checkDateInterval);
-
-    return filteredList;
-  }
-
-  filterUsersListByStatus(status: boolean | undefined, usersList: IUser[]): IUser[] {
-    const STATUS_NOT_SELECTED = status === undefined;
-
-    if (STATUS_NOT_SELECTED) {
-      return usersList;
-    }
-
-    const filteredList = usersList.filter((user) => user.ativo === status);
-
-    return filteredList;
-  }
-  
-  filterUsersListByName(name: string | undefined, usersList: IUser[]): IUser[] {
-    const NAME_NOT_TYPED = name === undefined;
-
-    if (NAME_NOT_TYPED) {
-      return usersList;
-    }
-
-    const filteredList = usersList.filter((user) => user.nome.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
-
-    return filteredList;
-  }
+    this.usersListFiltered.set(filterUsersList(filterOptions, this.usersList()));
+  }  
 }
