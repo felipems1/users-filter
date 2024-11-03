@@ -1,10 +1,10 @@
 <div class="flex h-screen">
   <div class="w-3/5 h-full flex flex-col">
     <div class="flex-grow">
-      <app-filter></app-filter>
+      <app-filter (onFilter)="onFilter($event)"></app-filter>
     </div>
     <div class="h-4/5">
-      <app-users-list [usersList]="users()" (userSelected)="onUserSelected($event)"></app-users-list>
+      <app-users-list [usersList]="usersListFiltered()" (userSelected)="onUserSelected($event)"></app-users-list>
     </div>
   </div>
   <div class="w-2/5 max-h-screen">
