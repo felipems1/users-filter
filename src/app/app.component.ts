@@ -5,6 +5,7 @@ import { UsersListComponent } from './shared/components/users-list/users-list.co
 import { IUser } from './shared/interfaces/user/user.interface';
 import { UsersList } from './mocks/users-list';
 import { IFilterOptions } from './shared/interfaces/filter-options.inteface';
+import { isWithinInterval } from 'date-fns';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,27 @@ export class AppComponent implements OnInit {
     let filteredList: IUser[] = [];
 
     filteredList = this.filterUsersListByName(filterOptions.name, usersList);
+
     filteredList = this.filterUsersListByStatus(filterOptions.status, filteredList);
+
+    filteredList = this.filterUsersListByDate(filterOptions.startDate, filterOptions.endDate, filteredList);
+
+    return filteredList;
+  }
+
+  filterUsersListByDate(startDate: Date | undefined, endDate: Date | undefined, usersList: IUser[]): IUser[] {
+    const DATES_NOT_SELECTED = startDate === undefined || endDate === undefined;
+
+    if (DATES_NOT_SELECTED) {
+      return usersList;
+    }
+
+    const checkDateInterval = (user: IUser) => isWithinInterval(new Date(user.dataCadastro), { 
+      start: startDate, 
+      end: endDate 
+    });
+
+    const filteredList = usersList.filter(checkDateInterval);
 
     return filteredList;
   }
