@@ -1,34 +1,40 @@
 # Users Filter
 
-## Tecnologias
+**Descrição:**
 
-- Angular
-- TypeScript
-- Tailwind CSS
-- Angular Material
-- Date-Fns
+Este projeto é uma aplicação de estudo criada com Angular para demonstrar a manipulação de dados de usuários, incluindo filtragem e visualização individual.  O foco principal foi a prática e o aprendizado das funcionalidades e da estrutura do Angular.
 
-## Instalação
+**Tecnologias Utilizadas:**
 
-1. Clone este repositório:
+* Angular
+* TypeScript
+* Tailwind CSS
+* Angular Material
+* Date-Fns
 
-   ```bash
-   git clone https://github.com/felipems1/users-filter.git
-   ```
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd users-filter
-   ```
-3. Instale as dependências:
-   ```bash
-   npm install
-   ```
-## Rodando projeto
+**Passos para Instalação:**
 
-1. Execute o seguinte comando para inicializar a aplicação:
+1. Clone o repositório: `git clone [URL do repositório]`
+2. Navegue até o diretório do projeto: `cd users-filter`
+3. Instale as dependências: `npm install`
 
-   ```bash
-    npm run start
-   ```
+**Como Usar:**
 
-   
+1. Execute o comando: `npm run start`
+2. O projeto estará disponível em: `http://localhost:4200`
+
+**Funcionalidades Principais:**
+
+* Lista todos os usuários.
+* Mostra apenas um usuário específico.
+* Filtra usuários por nome.
+* Filtra usuários por data.
+* Filtra usuários por status.
+
+**Licença:**
+
+MIT
+
+**Contato:**
+
+Meu LinkedIn: [https://www.linkedin.com/in/felipems1/](https://www.linkedin.com/in/felipems1/)
